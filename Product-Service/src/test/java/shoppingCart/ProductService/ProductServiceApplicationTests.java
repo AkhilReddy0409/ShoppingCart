@@ -29,9 +29,9 @@ class ProductServiceApplicationTests {
 	public void testCreate() {
 		Product p = new Product();
 		p.setId(200);
-		p.setProductName("iPhone XR");
-		p.setProductDescription("Fantastic");
-		p.setProductPrice(70000.00);
+		p.setName("iPhone XR");
+		p.setDescription("Fantastic");
+		p.setPrice(70000.00);
 		pRepo.save(p);
 		assertNotNull(pRepo.findById(200).get());
 	}
@@ -47,16 +47,16 @@ class ProductServiceApplicationTests {
 	@Order(3)
 	public void testRead() {
 		Product product = pRepo.findById(200).get();
-		assertEquals("iPhone XR", product.getProductName());
+		assertEquals("iPhone XR", product.getName());
 	}
 
 	@Test                                              //unit test case for updating product
 	@Order(4)
 	public void testUpdate() {
 		Product p = pRepo.findById(200).get();
-		p.setProductPrice(800.00);
+		p.setPrice(800.00);
 		pRepo.save(p);
-		assertNotEquals(700.00, pRepo.findById(200).get().getProductPrice());
+		assertNotEquals(700.00, pRepo.findById(200).get().getPrice());
 	}
 
 	@Test                                              //unit test case for deleting product

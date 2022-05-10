@@ -64,11 +64,11 @@ public class CartResource {
 		Item i= items.get(prodId);                                   //adding a product by id to cart using User by Id
 		if(items.containsKey(prodId)) {
 			i.setQuantity(i.getQuantity()+1);
-			i.setPrice(product.getProductPrice()*i.getQuantity());
+			i.setPrice(product.getPrice()*i.getQuantity());
 			items.put(prodId, i);
 		}
 		else {
-			items.put(prodId, new Item(prodId, product.getImage(), product.getProductName(), product.getProductPrice(), 1));
+			items.put(prodId, new Item(prodId, product.getImage(), product.getName(), product.getPrice(), 1));
 		}
 		cart.setItems(items);
 		cart.setTotal(0);
@@ -86,7 +86,7 @@ public class CartResource {
 		Item i= items.get(prodId);                                   //Removing a product by id to cart using User by Id
 		if(i.getQuantity()>1) {
 			i.setQuantity(i.getQuantity()-1);
-			i.setPrice(product.getProductPrice()*i.getQuantity());
+			i.setPrice(product.getPrice()*i.getQuantity());
 			items.put(prodId, i);
 		}
 		else {
