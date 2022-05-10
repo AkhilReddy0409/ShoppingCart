@@ -10,9 +10,11 @@
     padding-inline-end: 3px;
     padding-inline-start: 5px;
    
-  
-  
 }
+.total{
+background-color: rgb(35, 90, 60);;
+}
+
 
 .card{
     height: 540px;
@@ -20,12 +22,13 @@
     margin: 16px;
     background-color: rgb(255, 255, 255);
     align-items: center;
-    background-color: #78a391;
+    background-color: rgba(32, 139, 22, 0.756);;
     
 }
 
 .name{
-  color: aliceblue;
+  color: whitesmoke;
+  font-weight: 800;
   text-align: center;
   text-decoration: none;
 }
@@ -40,7 +43,7 @@
     border-radius: auto;
    height: 300px;
    width: 255px;
-   background-color: rgb(110, 189, 209);
+   background-color: rgba(32, 139, 22, 0.756);
    
 
        
@@ -53,20 +56,29 @@ font-weight:lighter;
 font-weight: 500;
    
     
-}
-/* b,p{ 
+} p{ 
     color: rgb(12, 12, 12);
-    font-weight: bolder;
+    font-weight: 1000;
     text-align:left;
-   
+    padding-top: 10px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
-    word-spacing: 1px;
-   
-    
-    
-} */
+    word-spacing: 1px;   
+} 
+b{ 
+  color: rgb(12, 12, 12);
+  font-weight: 1000;
+  text-align:left;
+  padding-top: 20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+ 
+  
+  
+} 
 q{                
     color: rgb(8, 8, 8);
     font-weight:normal;
@@ -109,10 +121,13 @@ nav{
 margin-top: 5cm;
 margin-left: 7cm;
 margin-bottom: 3cm;
+border-radius: 10%;
 
 }
 .bgimg{
   background-color: #59be79;
+ margin: 2cm;
+
 }
 .fa {
     padding: 10px;

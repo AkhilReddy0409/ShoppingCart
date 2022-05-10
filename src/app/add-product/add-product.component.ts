@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { CartService } from '../services/cart.service';
 import { CatalogService } from '../services/catalog.service';
 
@@ -10,7 +11,7 @@ import { CatalogService } from '../services/catalog.service';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-
+  public admin=false;
   userId=-1;
   name='';
   cartItems=0;
@@ -30,15 +31,28 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
     this.name= sessionStorage.getItem('name') || '';
     this.userId=parseInt(sessionStorage.getItem('userId') || '-1');
+    if(this.userId==1){
+      this.admin=true;
+    }
     this.cartService.cartItems(this.userId).subscribe(data=> this.cartItems=Number(data));
   }
 
   addNewProduct(){
+    Swal.fire({
+      title: 'Product has Added!',
+      text: '',
+      icon: 'success',
+      showCancelButton: false,
+      confirmButtonText: 'OK',
+      cancelButtonText: 'Cancel'
+  }).then((result) => {
+    if (result.value) {
     let {imagesource, ...product}= this.productForm.value;
     console.log(product);
     
     this.catalogService.addProduct(product).subscribe(()=>this.router.navigate(['/Home']));
-  }
+  }})
+}
 
   onFileUpload(event: any){
     const reader = new FileReader();

@@ -32,11 +32,11 @@
 <div class="background">
 </div>
 
-<h3>Login Here</h3>
+
   <form [formGroup]="loginForm">
-     
+  
           <label for="uname"><b>Username</b></label>
-          <input type="text" [class.is-invalid]="loginForm.controls.username.invalid && loginForm.controls.username.touched" class="form-control" formControlName="username" placeholder="Enter Username" name="uname" required>
+          <input type="text" [class.is-invalid]="loginForm.controls.username.invalid && loginForm.controls.username.touched" class="form-control" formControlName="username" placeholder="Username" name="uname" required>
          
           <div *ngIf="loginForm.controls.username.invalid && loginForm.controls.username.touched" class="text-danger">
             <small *ngIf="loginForm.get('username')!.errors?.required">Username cannot be empty</small>
@@ -45,7 +45,7 @@
       
       <div class="form-group">
         <label for="psw"><b>Password</b></label>
-        <input type="password"[class.is-invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched" class="form-control" formControlName="password" placeholder="Enter Password" name="psw" required>
+        <input type="password"[class.is-invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched" class="form-control" formControlName="password" placeholder="Password" name="psw" required>
         
           <div *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched" class="text-danger">
             <small *ngIf="loginForm.get('password')!.errors?.required">Password Cannot be empty</small>

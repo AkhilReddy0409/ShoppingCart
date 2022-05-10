@@ -50,8 +50,8 @@ export class CartComponent implements OnInit {
       if(_item.id==item.id){
         _item.quantity++;
         this.catalogService.getProduct(item.id).subscribe(data=>{
-          _item.price+= data.productPrice;
-          this.cart.total+= data.productPrice;
+          _item.price+= data.price;
+          this.cart.total+= data.price;
         });
       }
     }
@@ -65,8 +65,8 @@ export class CartComponent implements OnInit {
       if(_item.id==item.id){
         _item.quantity--;
         this.catalogService.getProduct(item.id).subscribe(data=>{
-          _item.price-= data.productPrice;
-          this.cart.total-= data.productPrice;
+          _item.price-= data.price;
+          this.cart.total-= data.price;
         });
       }
     }

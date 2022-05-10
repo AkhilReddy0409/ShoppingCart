@@ -27,12 +27,12 @@ export class EditProductComponent implements OnInit {
     this.catalogService.getProduct(this.prodId).subscribe(data=>{
       this.productForm= this.fb.group({
         id: [data.id],
-        name: [data.productName, [Validators.required, Validators.minLength(3)]],
-        category: [data.productCategory, [Validators.required]],
-        price: [data.productPrice, [Validators.required]],
+        name: [data.name, [Validators.required, Validators.minLength(3)]],
+        category: [data.category, [Validators.required]],
+        price: [data.price, [Validators.required]],
         imagesource: [data.image, [Validators.required]],
         image: [data.image],
-        description: [data.productDescription]
+        description: [data.description]
       });
     });
     this.userId=parseInt(sessionStorage.getItem('userId') || '-1');

@@ -19,6 +19,10 @@ li:hover
   height: auto;
 } 
 
+.btn-warning{
+  color: white;
+background-color: #065535;
+}
 
 img{
   padding-top: 3cm;

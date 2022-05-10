@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
 import { CartService } from '../services/cart.service';
 import { CatalogService } from '../services/catalog.service';
@@ -34,13 +35,22 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(){
+    Swal.fire({
+      title: 'Product Added to Cart!',
+      text: '',
+      icon: 'success',
+      showCancelButton: false,
+      confirmButtonText: 'OK',
+      cancelButtonText: 'Cancel'
+  }).then((result) => {
+    if (result.value) {
     if(this.isLoggedIn)
     this.cartService.addToCart(this.userId, this.product.id).subscribe(data=>{
         this.cartItems++
     });
     else
     this.router.navigate(['login']);
-  }
+  }})}
 
   
 }

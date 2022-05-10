@@ -1,11 +1,11 @@
 export class ProductModel {
     constructor(
         public id: number,
-        public productName: string,
-        public productCategory: string,
-        public productDescription: string,
+        public name: string,
+        public category: string,
+        public description: string,
         public image: string,
-        public productPrice: number
+        public price: number
         
     ) {}
 }

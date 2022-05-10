@@ -5,13 +5,13 @@ li{
     padding: 14px 15px;
     text-decoration:underline;
     overflow: hidden;
-    background-color: rgb(127, 180, 194);
+    background-color: #1E6649;
     height: auto;
 }
 li:hover
 {
     
- background-color: rgb(14, 13, 13);
+ background-color: #065535;
     color: rgb(6, 139, 216);
     text-align: center;
     padding: 15px;
