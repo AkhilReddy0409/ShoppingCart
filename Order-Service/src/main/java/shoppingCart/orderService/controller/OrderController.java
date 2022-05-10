@@ -76,6 +76,11 @@ public class OrderController {
 		return getRecentOrder(userId).getItems().values();
 	}
 	
+	@GetMapping("/items/{orderId}")
+	public Collection<Item> getItems(@PathVariable("orderId") int orderId) {
+		return getOrder(orderId).getItems().values();
+	}
+	
 	
 	
 	

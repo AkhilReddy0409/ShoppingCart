@@ -7,7 +7,6 @@ import shoppingCart.ProfileService.model.UserProfile;
 
 @Repository
 public interface ProfileRepository extends MongoRepository<UserProfile,Integer>{
-public UserProfile findByfullName(String fullName);
-public UserProfile findBymoblieNumber(long mobileNumber);        //configuring the Repository
-public UserProfile findByprofileId(int profileId);
+public UserProfile findByUsername(String username);
+      //configuring the Repository
 }

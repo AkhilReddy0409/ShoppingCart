@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import shoppingCart.ProfileService.model.IdGenerator;
 import shoppingCart.ProfileService.model.UserProfile;
 import shoppingCart.ProfileService.repository.IdRepository;
+import shoppingCart.ProfileService.repository.ProfileRepository;
 import shoppingCart.ProfileService.service.ProfileService;
 
 
@@ -24,6 +25,9 @@ import shoppingCart.ProfileService.service.ProfileService;
 public class ProfileResource {
 	@Autowired
 	private ProfileService profileService;
+	
+	@Autowired
+	private ProfileRepository profileRepository;
 	
 	@Autowired
 	IdRepository idRepo;
@@ -36,6 +40,11 @@ public class ProfileResource {
 	@GetMapping("/getAllProfiles")
 	public List<UserProfile> getAllProfiles(){                                     //Read All profile into Database
 		return profileService.getAllProfiles();
+	}
+	
+	@GetMapping("/{id}")
+	public UserProfile getUser(@PathVariable("id") int id) {
+		return profileRepository.findById(id).get();
 	}
 	
 	 @PutMapping("/updateProfile")

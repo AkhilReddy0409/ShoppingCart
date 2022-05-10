@@ -21,7 +21,7 @@ public class ProfileService {
 	
 	public void addProfile(UserProfile userProfile ) {
 		IdGenerator idGen= idRepository.findById("ProfileId").get();
-		userProfile.setProfileId(idGen.getSeq());
+		userProfile.setId(idGen.getSeq());
 		idGen.setSeq(idGen.getSeq()+1);
 		idRepository.save(idGen);
 		userProfile.setRole("User");
@@ -31,13 +31,11 @@ public class ProfileService {
 		return profileRepository.findAll();                              //implementing Find method from MongoRepository
 	}
 	public UserProfile getByfullName(String fullName) {
-		return profileRepository.findByfullName(fullName);              //implementing Find By FullName method from MongoRepository
+		return profileRepository.findByUsername(fullName);              //implementing Find By FullName method from MongoRepository
 	}
-	public UserProfile getBymobileNumber(long mobileNumber) {
-		return profileRepository.findBymoblieNumber(mobileNumber);     //implementing Find By MobileNumber method from MongoRepository
-	}
+	
 	public String updateUserProfile(UserProfile profile) {
-		 Optional<UserProfile> prof = profileRepository.findById(profile.getProfileId());
+		 Optional<UserProfile> prof = profileRepository.findById(profile.getId());
 	        if (!prof.isPresent()) {
 	            return ("Updation FAILED");
 	        }

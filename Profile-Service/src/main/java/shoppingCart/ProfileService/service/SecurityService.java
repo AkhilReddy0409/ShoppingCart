@@ -23,8 +23,8 @@ public class SecurityService implements UserDetailsService{
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		UserProfile uP= profileRepo.findByfullName(username);
-		return new User(uP.getFullName(), uP.getPassword(), new ArrayList<>());
+		UserProfile uP= profileRepo.findByUsername(username);
+		return new User(uP.getUsername(), uP.getPassword(), new ArrayList<>());
 	}
 
 }

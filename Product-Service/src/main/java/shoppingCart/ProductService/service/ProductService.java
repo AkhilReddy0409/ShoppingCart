@@ -17,7 +17,7 @@ import shoppingCart.ProductService.repository.ProductRepository;
 public class ProductService {
 
 	@Autowired
-	private ProductRepository productRepo;
+    ProductRepository productRepo;
 	
 	@Autowired
 	IdRepository idRepository;
@@ -43,7 +43,7 @@ public class ProductService {
 	            return ("Updation FAILED");
 	        }
                                                                      //Update Method
-	        Product updatedProduct = productRepo.save(product);
+	         productRepo.save(product);
 
 	        return "Updation SUCCESS";
 	    }

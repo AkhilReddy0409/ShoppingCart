@@ -22,6 +22,7 @@ import shoppingCart.ProductService.service.ProductService;
 @RestController
 @RequestMapping("/product")
 public class ProductResource {
+	
 	@Autowired
 	private ProductService productService;
 	
@@ -47,6 +48,8 @@ public class ProductResource {
 	public void updateProduct(@RequestBody Product p) {                         //update a product into Database
 		productService.updateProduct(p);
 	}
+	
+	
 	
 	 @DeleteMapping("/deleteProduct/{productId}")
 	 public String deleteProduct(@PathVariable int productId){                  //deleting a product in Database

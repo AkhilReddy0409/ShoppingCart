@@ -68,7 +68,7 @@ public class CartResource {
 			items.put(prodId, i);
 		}
 		else {
-			items.put(prodId, new Item(prodId, product.getProductType(), product.getProductName(), product.getProductPrice(), 1));
+			items.put(prodId, new Item(prodId, product.getImage(), product.getProductName(), product.getProductPrice(), 1));
 		}
 		cart.setItems(items);
 		cart.setTotal(0);

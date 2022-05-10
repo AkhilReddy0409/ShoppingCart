@@ -49,19 +49,19 @@ public class SecurityController {
 	@PostMapping("/authenticate")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authRequest) throws Exception{
 		try {
-			authManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getFullName(), authRequest.getPassword()));
+			authManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
 		} catch (BadCredentialsException e) {
 			throw new Exception("Incorrect username and password", e);
 		}
 		
-		final UserDetails userDetails= sService.loadUserByUsername(authRequest.getFullName());
+		final UserDetails userDetails= sService.loadUserByUsername(authRequest.getUsername());
 		 
 		final String jwt= jwtUtil.generateToken(userDetails);
 		System.out.println(jwt);
 		
-		UserProfile user= profileRepo.findByfullName(userDetails.getUsername());
+		UserProfile user= profileRepo.findByUsername(userDetails.getUsername());
 		
-		return 	ResponseEntity.ok(new AuthenicationResponse(jwt));
+		return 	ResponseEntity.ok(new AuthenicationResponse(jwt,user.getId(),user.getName()));
 	}
 	
 	
@@ -69,21 +69,20 @@ public class SecurityController {
 	public String register(@RequestBody UserProfile user) {
 		System.out.println(user);
 		List<String> usernames= new ArrayList<>();
-		profileRepo.findAll().forEach(u-> usernames.add(u.getFullName()));
+		profileRepo.findAll().forEach(u-> usernames.add(u.getUsername()));
 		
-		if(usernames.contains(user.getFullName()))
+		if(usernames.contains(user.getUsername()))
 			{
 			return "-1";
 			}
 		
 		IdGenerator idGen= idRepo.findById("ProfileId").get();
-		user.setProfileId(idGen.getSeq());
+		user.setId(idGen.getSeq());
 		idGen.setSeq(idGen.getSeq()+1);
 		idRepo.save(idGen);
 		user.setRole("USER");
 		profileRepo.save(user);
-		
-		return user.getProfileId()+"";
+		return user.getId()+"";
 		
 	}
 	

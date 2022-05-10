@@ -14,12 +14,14 @@ import lombok.NoArgsConstructor;
 public class UserProfile {
 	
 	@Id
-	 int profileId;
-	 String fullName;
+	 int id;
+	 String name;
+	 String username;
 	 String emailId;
-	 long moblieNumber;
+	 long number;
 	 String gender;
 	 String role;
 	 String password;
+	 Address address;
 
 }
