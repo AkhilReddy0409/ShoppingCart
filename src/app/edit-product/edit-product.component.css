@@ -1,0 +1,62 @@
+li{
+    float: left;
+    display:block;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration:underline;
+    overflow: hidden;
+    background-color: rgb(127, 180, 194);
+    height: auto;
+}
+li:hover
+{
+    
+ background-color: rgb(14, 13, 13);
+    color: rgb(6, 139, 216);
+    text-align: center;
+    padding: 15px;
+    height: auto;
+} 
+
+
+nav{
+    background-color: #065535;
+    height: auto;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-instagram {
+    background: #ff0c9e;
+    color: white;
+  }
+  .fa-whatsapp {
+    background: #00c954;
+    color: white;
+  }

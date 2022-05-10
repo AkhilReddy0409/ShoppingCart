@@ -1,0 +1,154 @@
+
+
+.row{
+    margin: 0 10px;
+    
+}
+
+.col{
+    padding: 5px 5px;
+    padding-inline-end: 3px;
+    padding-inline-start: 5px;
+   
+  
+  
+}
+
+.card{
+    height: 540px;
+    width: auto;
+    margin: 16px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    background-color: #78a391;
+    
+}
+
+.name{
+  color: aliceblue;
+  text-align: center;
+  text-decoration: none;
+}
+
+.card:hover{
+    border: 5px solid #065535;
+    border-radius: 10px;
+}
+
+.cat-img{ /* Css For image*/
+    border-bottom: 1px solid black;
+    border-radius: auto;
+   height: 300px;
+   width: 255px;
+   background-color: rgb(110, 189, 209);
+   
+
+       
+}
+
+a{  /* Css For header names like home,car,sign in...*/
+
+    
+font-weight:lighter;
+font-weight: 500;
+   
+    
+}
+/* b,p{ 
+    color: rgb(12, 12, 12);
+    font-weight: bolder;
+    text-align:left;
+   
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+   
+    
+    
+} */
+q{                
+    color: rgb(8, 8, 8);
+    font-weight:normal;
+    text-align:left;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    background-color: rgb(171, 28, 196);
+    
+} 
+
+li{
+    float: left;
+    display:block;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration:underline;
+    overflow: hidden;
+    background-color: #1E6649;
+    height: auto;
+}
+li:hover
+{
+    
+ background-color: #065535;
+    color: rgb(6, 139, 216);
+    text-align: center;
+    padding: 15px;
+    height: auto;
+} 
+
+nav{
+    background-color: #065535;
+    height: auto;
+}
+
+.img1{
+margin-top: 5cm;
+margin-left: 7cm;
+margin-bottom: 3cm;
+
+}
+.bgimg{
+  background-color: #59be79;
+}
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-instagram {
+    background: #ff0c9e;
+    color: white;
+  }
+  .fa-whatsapp {
+    background: #00c954;
+    color: white;
+  }
+ 
+  

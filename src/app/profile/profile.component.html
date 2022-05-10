@@ -1,0 +1,82 @@
+<nav class="navbar navbar-dark  text-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Shopping Cart</a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/profile">{{name}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<body>
+<div class="content">
+<h1>User Profile</h1>
+
+<table class="table">
+    <tr>
+        <b>Name :</b>
+        <td>{{user.name}}</td>
+    </tr>
+    <tr>
+        <b>Username :</b>
+        <td>{{user.username}}</td>
+    </tr>
+    <tr>
+        <b>Email :</b>
+        <td>{{user.emailId}}</td>
+    </tr>
+    <tr>
+        <b>Number :</b>
+        <td>{{user.number}}</td>
+    </tr>
+    <tr>
+        <b>Gender :</b>
+        <td>{{user.gender}}</td>
+    </tr>
+    <tr>
+        <b>Address :</b>
+        <td>
+            {{user.address.house}},
+            {{user.address.street}},
+            {{user.address.area}},
+            {{user.address.city}},
+            {{user.address.state}},
+            {{user.address.country}}
+        </td>
+    </tr>
+</table>
+
+<h3><button routerLink="/all-orders" class="btn btn-primary">My Orders</button></h3>
+
+</div>
+</body>
+<hr>
+<footer class="bg-light text-center text-white">
+  
+  
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color:#065535;">
+    © 2022 Copyright:
+    <a  routerLink="">ShoppingCart.com</a> |
+    <a  routerLink="">Privacy</a> |
+    <a  routerLink="">Terms&Conditions</a> |
+    <a  routerLink="">About</a> 
+  </div>
+
+  <a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-whatsapp"></a>
+  <a href="#" class="fa fa-instagram"></a>
+  
+</footer>

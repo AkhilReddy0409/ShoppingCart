@@ -1,0 +1,150 @@
+  
+  li{
+    float: left;
+    display:block;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration:underline;
+    overflow: hidden;
+    background-color: #1E6649;
+    height: auto;
+}
+li:hover
+{
+    
+  background-color: #065535;
+    color: rgb(6, 139, 216);
+    text-align: center;
+    padding: 15px;
+    height: auto;
+} 
+
+nav{
+  background-color: #065535;
+    height: 97px;
+}
+
+  
+ 
+  
+    
+
+
+*,
+*:before,
+*:after{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+body{
+  background-color: #1E6649;
+}
+
+form{
+height: 540px;
+width: 420px;
+background-color: #ffffff;
+position: fixed;
+transform: translate(-50%,-50%);
+top: 55%;
+left: 50%;
+border-radius: 10px;
+backdrop-filter: blur(10px);
+border: 2px solid rgba(255,255,255,0.1);
+box-shadow: 0 0 40px rgba(8,7,16,0.6);
+padding: 50px 35px;
+}
+form {
+font-family: 'Poppins',sans-serif;
+color: #ffffff;
+font-weight: bolder;
+letter-spacing: 0.5px;
+outline: none;
+border: none;
+}
+form h3{
+font-size: 32px;
+font-weight: 500;
+line-height: 42px;
+text-align: center;
+}
+form ::placeholder{
+  color: #000;
+  font-weight:600;
+  font-style:normal;
+  
+
+}
+
+
+label{
+display: block;
+margin-top: 30px;
+font-size: 16px;
+font-weight: 500;
+color: #000;
+}
+input{
+display: block;
+height: 50px;
+width: 100%;
+background-color: rgba(255,255,255,0.07);
+border-radius: 3px;
+padding: 0 10px;
+margin-top: 8px;
+font-size: 14px;
+font-weight: 300;
+}
+
+button{
+margin-top: 50px;
+width: 100%;
+background-color: #1632d1;
+color: #080710;
+padding: 15px 0;
+font-size: 18px;
+font-weight: 300;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.cancelbtn {
+ 
+  padding: 10px 18px;
+  background-color: #065535;
+  color: rgb(252, 250, 250);
+  size: 2cm;
+  text-align: center;
+  
+}
+
+
+  h4{
+    width: 80%;
+    padding-left: 2cm;
+    color: #080710;
+    
+  }
+
+
+
+b{
+  font-weight: bolder;
+  color: #065535;
+  font-style:unset;
+ font-size: large;
+ 
+}
+
+h5{
+  width: 2.5cm;
+  font-weight: 200;
+}
+a{
+  padding-left: 5cm;
+  color: #0c0cf0;
+ font-weight: 400;
+}
+
+
