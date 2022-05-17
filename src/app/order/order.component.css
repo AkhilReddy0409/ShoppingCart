@@ -38,6 +38,11 @@ nav{
   background-color: #065535;
   height: auto;
 }
+.print{
+  margin-left: 45%;
+  color: whitesmoke;
+  background-color: #065535;
+}
 
 .fa {
   padding: 10px;

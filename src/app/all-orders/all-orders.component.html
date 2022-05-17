@@ -10,7 +10,7 @@
             <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/profile">{{name}}</a>
+            <a class="nav-link active" routerLink="/profile">Hi,{{name}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/logout">Logout</a>
@@ -26,7 +26,7 @@
         <tr *ngFor="let order of orders">
             <td><strong>Order Id:</strong>{{order.id}}</td>
             <td><strong>Order Placed On:</strong>{{order.date}}</td>
-            <td><strong>Total Amount :</strong>{{order.amount}}</td>
+            <td><strong>Total Amount :</strong>₹{{order.amount}}</td>
             <td><strong>Order Status:</strong>{{order.status}}</td>
             <td><button routerLink="/order/{{order.id}}" class="btn btn-info">View Order</button></td>
         </tr>
@@ -45,9 +45,9 @@
     <a  routerLink="">About</a> 
   </div>
 
-  <a href="#" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <a href="#" class="fa fa-whatsapp"></a>
-  <a href="#" class="fa fa-instagram"></a>
+ <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+  <a href="https://twitter.com/" class="fa fa-twitter"></a>
+  <a href="https://web.whatsapp.com/" class="fa fa-whatsapp"></a>
+  <a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram"></a>
   
 </footer>

@@ -9,6 +9,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  fieldTextType: boolean = false;
 
   loginForm= this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
@@ -21,6 +22,11 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authService.authenticate(this.loginForm.value.username, this.loginForm.value.password);
+    
+
+  }
+  toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
   }
 
 }

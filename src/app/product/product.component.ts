@@ -35,6 +35,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(){
+    if(this.isLoggedIn){
     Swal.fire({
       title: 'Product Added to Cart!',
       text: '',
@@ -50,7 +51,28 @@ export class ProductComponent implements OnInit {
     });
     else
     this.router.navigate(['login']);
-  }})}
+  }})
+}else{
+  Swal.fire({
+    title: 'Please Login to proceed!',
+    text: '',
+    icon: 'error',
+    showCancelButton: false,
+    confirmButtonText: 'OK',
+    cancelButtonText: 'Cancel'
+}).then((result) => {
+  if (result.value) {
+  if(this.isLoggedIn)
+  this.cartService.addToCart(this.userId, this.product.id).subscribe(data=>{
+      this.cartItems++
+  });
+  else
+  this.router.navigate(['login']);
+}})
+
+}
+
+}
 
   
 }

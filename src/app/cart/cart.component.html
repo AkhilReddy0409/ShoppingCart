@@ -10,7 +10,7 @@
             <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/profile">{{name}}</a>
+            <a class="nav-link" routerLink="/profile">Hi,{{name}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/logout">Logout</a>
@@ -43,10 +43,24 @@
         <td></td>
         <td></td>
         <h3> Total: {{cart.total}}</h3>
-        <td><a><button  class="GFG" onclick= "http:localhost:8086/payment/submitPaymentDetail" class="btn btn-success"(click)="checkOut()">Buy Now</button></a></td>
+        <!-- <td><a><button  class="GFG"  class="btn btn-success"(click)="checkOut()">Buy Now</button></a></td> -->
+        <td>
+          <google-pay-button
+          environment="TEST"
+          buttonType="order"
+          buttonColor="black"
+          [paymentRequest]="paymentRequest"
+          (loadpaymentdata)="onLoadPaymentData($event)"
+          (error)="onError($event)"
+          [paymentAuthorizedCallback]="onPaymentDataAuthorized"
+          (click)="checkOut()"
+        >
+        </google-pay-button> 
+
+        </td>
     </tr>
 </table>
-<h1 *ngIf="!itemsExist">Your Cart is Empty!</h1>
+<h1 *ngIf="!itemsExist">Your Cart is Empty!<br> <a routerLink="">Go to Home!</a></h1>
 </div>
 <hr>
 <footer class="bg-light text-center text-white">
@@ -61,9 +75,9 @@
     <a  routerLink="">About</a> 
   </div>
 
-  <a href="#" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <a href="#" class="fa fa-whatsapp"></a>
-  <a href="#" class="fa fa-instagram"></a>
+ <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+  <a href="https://twitter.com/" class="fa fa-twitter"></a>
+  <a href="https://web.whatsapp.com/" class="fa fa-whatsapp"></a>
+  <a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram"></a>
   
 </footer>

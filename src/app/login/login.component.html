@@ -45,22 +45,31 @@
       
       <div class="form-group">
         <label for="psw"><b>Password</b></label>
-        <input type="password"[class.is-invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched" class="form-control" formControlName="password" placeholder="Password" name="psw" required>
-        
+        <input class="input-group" [type]="fieldTextType ? 'text' : 'password'" [class.is-invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched" class="form-control" formControlName="password" placeholder="Password" name="psw" required>
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <i
+              class="fa"
+              [ngClass]="{
+                'fa-eye-slash': !fieldTextType,
+                'fa-eye': fieldTextType
+              }"
+              (click)="toggleFieldTextType()"
+            ></i>
+          </span>
+        </div>
           <div *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched" class="text-danger">
             <small *ngIf="loginForm.get('password')!.errors?.required">Password Cannot be empty</small>
             <small *ngIf="loginForm.get('password')!.errors?.minlength">Password cannot be less than 8 characters</small>
           </div>
       </div>
     
-      
-      
-    
-      
-     <h5  routerLink=""><button class="cancelbtn" > Cancel</button></h5>  
+       
      
       
-     <h4> <button  [disabled]="!loginForm.valid"  type="submit" class="cancelbtn" (click)="login()" value="Login" >Login</button></h4>
+     <h4> <button  [disabled]="!loginForm.valid"  type="submit" class="cancelbtn" (click)="login()" value="Login" >Login</button>
+      <button class="cancelbtn" routerLink="" > Cancel</button>
+    </h4>
     </form>
      
 

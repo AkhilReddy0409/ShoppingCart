@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AuthHttpInterceptorService } from './services/auth-http-interceptor.service';
+import { GooglePayButtonModule } from '@google-pay/button-angular';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AuthHttpInterceptorService } from './services/auth-http-interceptor.ser
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    GooglePayButtonModule,
     RouterModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptorService, multi: true }],

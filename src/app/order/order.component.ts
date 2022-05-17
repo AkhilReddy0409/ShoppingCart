@@ -45,6 +45,10 @@ export class OrderComponent implements OnInit {
     this.cartService.cartItems(this.userId).subscribe(data=> this.cartItems=Number(data));
     
   }
+
+  printThisPage() {
+    window.print();
+  }
   
 
 }

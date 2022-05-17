@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   public user: any;
   public name='';
   public cartItems=0;
+  public admin: any;
 
   constructor(private cartService: CartService, private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
@@ -24,8 +25,12 @@ export class ProfileComponent implements OnInit {
       this.user=data;
       console.log(this.user);
     });
+    if(this.userId==1){
+      this.admin=true;
+    }
     this.name=sessionStorage.getItem('name') || '';
     this.cartService.cartItems(this.userId).subscribe(data=> this.cartItems=Number(data));
   }
+  
 
 }

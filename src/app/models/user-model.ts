@@ -2,13 +2,14 @@ import { AddressModel } from "./address-model";
 
 export class UserModel {
     constructor(
-        public profileId: number,
-        public fullName: string,
-        public emailId: string,
-        public number : number,
-        public gender: string,
-        public role: string,
+        public id: number,
+        public name: string,
+        public username: string,
+        public email: string,
         public password: string,
-        public address: AddressModel
+        public number: number,
+        public gender: string,
+        public address: AddressModel,
+        public role: string
     ){}
 }

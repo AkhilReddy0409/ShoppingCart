@@ -6,14 +6,17 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="">Home</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="!admin" class="nav-item">
             <a routerLink="/cart" class="nav-link">Cart <span class="badge">{{cartItems}}</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/profile">{{name}}</a>
+            <a class="nav-link active" routerLink="/profile">Hi,{{name}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/logout">Logout</a>
+          </li>
+          <li *ngIf="admin" class="nav-item">
+            <a class="nav-link" routerLink="/add-product">Add Product</a>
           </li>
         </ul>
       </div>
@@ -21,7 +24,8 @@
 </nav>
 <body>
 <div class="content">
-<h1>User Profile</h1>
+<h1><img class="img profile" src="https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg" width="48" height="48"/>
+  User Profile</h1>
 
 <table class="table">
     <tr>
@@ -54,7 +58,7 @@
     </tr>
 </table>
 
-<h3><button routerLink="/all-orders" class="btn btn-primary">My Orders</button></h3>
+<h3><button routerLink="/all-orders" *ngIf="!admin" class="btn btn-primary">My Orders</button></h3>
 
 </div>
 </body>
@@ -71,9 +75,9 @@
     <a  routerLink="">About</a> 
   </div>
 
-  <a href="#" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <a href="#" class="fa fa-whatsapp"></a>
-  <a href="#" class="fa fa-instagram"></a>
+  <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+  <a href="https://twitter.com/" class="fa fa-twitter"></a>
+  <a href="https://web.whatsapp.com/" class="fa fa-whatsapp"></a>
+  <a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram"></a>
   
 </footer>

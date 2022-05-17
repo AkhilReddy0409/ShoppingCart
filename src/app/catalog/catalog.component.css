@@ -54,9 +54,12 @@ a{  /* Css For header names like home,car,sign in...*/
     
 font-weight:lighter;
 font-weight: 500;
-   
+}
+.btn-danger{
+margin-left: 1cm;
+}  
     
-} p{ 
+ p{ 
     color: rgb(12, 12, 12);
     font-weight: 1000;
     text-align:left;

@@ -24,7 +24,10 @@ nav{
     height: 97px;
 }
 
-  
+.fa-eye-slash:hover,
+.fa-eye:hover {
+  cursor: pointer;
+}
  
   
     

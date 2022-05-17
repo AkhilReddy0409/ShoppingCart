@@ -19,7 +19,7 @@ li:hover
 } 
 
 h1{
-    padding-left: 50%;
+    padding-left: 45%;
     color: black;
     font-weight: 500;
     padding-top: 1cm;
@@ -64,6 +64,10 @@ h3{
 nav{
     background-color: #065535;
     height: auto;
+}
+.profile{
+  box-shadow: #065535;
+  border: #065535;
 }
 
 .fa {
